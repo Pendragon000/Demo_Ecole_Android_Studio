@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".DetailsCoursActivity">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:id="@+id/main"
+    tools:context=".DetailsCoursActivity">
+    <TextView
+        android:id="@+id/txt_departement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Philo" />
+    <TextView
+        android:id="@+id/txt_numero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="101" />
+    <TextView
+        android:id="@+id/txt_travaux"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Travail 1\nTravail 2\nTravail 3" />
+</LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
