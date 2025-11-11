@@ -1,6 +1,8 @@
 package cstjean.mobile.ecole.travail;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
 
 import junit.framework.TestCase;
@@ -87,5 +89,37 @@ public class TestCoursSession {
         final String url = "https://www.cstjean.qc.ca/philo101";
         coursSession.setUrl(url);
         assertEquals(url, coursSession.getUrl().toString());
+    }
+
+    @Test
+    public void testEgalite() {
+        CoursSession coursA = new CoursSession("Philo", "101");
+        CoursSession coursB = new CoursSession("Philo", "101");
+        assertEquals(coursA, coursB);
+        CoursSession coursC = new CoursSession("Philo", "201");
+        assertNotEquals(coursA, coursC);
+        // Réflexivité
+        assertEquals(coursA, coursA);
+        // Symétrie
+        assertEquals(coursB, coursA);
+        CoursSession coursD = new CoursSession("Philo", "101");
+        assertEquals(coursB, coursD);
+        assertEquals(coursA, coursD);
+        // Constance
+        assertEquals(coursA, coursB);
+        // Comparaison à null
+        // LINT : jUnit n'appelle pas le equal si on envoit null donc on veut comparer directement
+        // On veut vraiment tester le null ici...
+        assertFalse(coursA.equals(null));
+        // Validation
+        assertNotEquals("MATHS334", coursA);
+    }
+
+    @Test
+    public void testHashCode() {
+        CoursSession coursA = new CoursSession("Philo", "101");
+        CoursSession coursB = new CoursSession("Philo", "101");
+        assertEquals(coursA.hashCode(), coursB.hashCode());
+        assertEquals(coursA.hashCode(), coursA.hashCode());
     }
 }
