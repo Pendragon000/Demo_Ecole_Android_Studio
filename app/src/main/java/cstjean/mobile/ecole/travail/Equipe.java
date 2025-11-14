@@ -1,5 +1,7 @@
 package cstjean.mobile.ecole.travail;
 
+import java.util.LinkedList;
+
 public class Equipe implements Cloneable {
     private String nom;
     private LinkedList<Joueur> listeJoueurs = new LinkedList<>();
