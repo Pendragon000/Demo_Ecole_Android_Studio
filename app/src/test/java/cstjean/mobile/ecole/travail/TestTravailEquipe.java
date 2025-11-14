@@ -31,4 +31,6 @@ public class TestTravailEquipe extends TestTravail {
     protected Travail creerTravail(String nom, Calendar dateRemise) {
         return new TravailEquipe(nom, dateRemise);
     }
+
+
 }
